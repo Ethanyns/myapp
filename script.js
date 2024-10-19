@@ -1,12 +1,12 @@
-// Authentication logic
-const hashedKey = '5f4dcc3b5aa765d61d8327deb882cf99'; // hashed version of 'password'
+// Hashed version of "password" using MD5
+const hashedKey = '5f4dcc3b5aa765d61d8327deb882cf99'; // This is the MD5 hash of "password"
 
 function authenticate() {
     const enteredKey = document.getElementById('auth-key').value;
-    const hashedEnteredKey = md5(enteredKey);
+    const hashedEnteredKey = CryptoJS.MD5(enteredKey).toString(); // Using CryptoJS MD5 hash function
 
     if (hashedEnteredKey === hashedKey) {
-        window.location.href = "main.html";
+        window.location.href = "main.html"; // Redirect to main page on success
     } else {
         document.getElementById('auth-error').innerText = "Invalid authentication key.";
     }
