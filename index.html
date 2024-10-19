@@ -5,14 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Authentication</title>
     <link rel="stylesheet" href="style.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
 </head>
 <body>
-    <div class="auth-container">
+    <div class="container">
         <h2>Enter Authentication Key</h2>
-        <input type="password" id="auth-key" placeholder="Enter Key">
-        <button onclick="authenticate()">Login</button>
-        <p id="auth-error" class="error"></p>
+        <form id="authForm">
+            <input type="password" id="authKey" placeholder="Enter your key" required>
+            <button type="submit">Submit</button>
+            <p class="error" id="errorMessage"></p>
+        </form>
     </div>
 
     <script src="script.js"></script>
