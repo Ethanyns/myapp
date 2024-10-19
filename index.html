@@ -3,27 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Telegram Web App</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Authentication</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>Welcome to My Telegram Web App</h1>
-            <img src="your-header-image.jpg" alt="Header Image" class="header-image">
-        </header>
-        
-        <main>
-            <section class="content">
-                <h2>What We Do</h2>
-                <p>This is a simple Telegram web app to showcase some cool features!</p>
-                <button id="action-button">Click Me!</button>
-            </section>
-        </main>
-        
-        <footer>
-            <p>Created with ❤️ for Telegram Users</p>
-        </footer>
+    <div class="auth-container">
+        <h2>Enter Authentication Key</h2>
+        <input type="password" id="auth-key" placeholder="Enter Key">
+        <button onclick="authenticate()">Login</button>
+        <p id="auth-error" class="error"></p>
     </div>
 
     <script src="script.js"></script>
