@@ -1,1 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main Page</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <h1>Your Bitcoin Wallet</h1>
+        <div class="balance-box">
+            <h2>Balance: 10 BTC</h2>
+            <p id="btc-usd">≈ $0 USD</p>
+        </div>
+
+        <div class="button-container">
+            <button class="action-button" onclick="viewHistory()"><img src="history-icon.png"> View Transactions</button>
+            <button class="action-button" onclick="sendBTC()"><img src="send-icon.png"> Send BTC</button>
+            <button class="action-button" onclick="support()"><img src="support-icon.png"> Support</button>
+        </div>
+    </div>
+
+    <div id="send-page" class="hidden">
+        <h2>Send Bitcoin</h2>
+        <input type="text" id="btc-address" placeholder="Enter Bitcoin Address">
+        <input type="text" id="btc-amount" placeholder="0.000000">
+        <p id="amount-usd">≈ $0 USD</p>
+
+        <h3>Duration</h3>
+        <label><input type="checkbox" id="24hrs"> 24 hrs</label>
+        <label><input type="checkbox" id="48hrs"> 48 hrs</label>
+        <label><input type="checkbox" id="7days"> 7 days</label>
+        <label><input type="checkbox" id="20days"> 20 days</label>
+
+        <h3>Address Type</h3>
+        <label><input type="checkbox" id="non-custodial"> Non-custodial wallet</label>
+        <label><input type="checkbox" id="custodial"> Custodial wallet</label>
+        <label><input type="checkbox" id="default"> Default</label>
+
+        <h3>Confirmation</h3>
+        <label><input type="checkbox" id="2-confirmation"> 2</label>
+        <label><input type="checkbox" id="6-confirmation"> 6</label>
+        <label><input type="checkbox" id="10-confirmation"> 10</label>
+        <label><input type="checkbox" id="12-confirmation"> 12</label>
+
+        <button onclick="confirmTransaction()">Send BTC</button>
+        <p id="send-error" class="error"></p>
+    </div>
+
+    <div id="history-page" class="hidden">
+        <h2>Transaction History</h2>
+        <p>No history available.</p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
 
