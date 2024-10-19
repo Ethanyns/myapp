@@ -2,12 +2,8 @@
 const hashedKey = '5f4dcc3b5aa765d61d8327deb882cf99'; // MD5 hash of "password"
 
 function authenticate() {
-    const enteredKey = document.getElementById('auth-key').value;
+    const enteredKey = document.getElementById('auth-key').value.trim(); // Trim whitespace
     const hashedEnteredKey = CryptoJS.MD5(enteredKey).toString(); // Hash the entered key
-
-    console.log("Entered Key: ", enteredKey); // Log the entered key
-    console.log("Hashed Entered Key: ", hashedEnteredKey); // Log the hashed entered key
-    console.log("Expected Hashed Key: ", hashedKey); // Log the expected hashed key
 
     if (hashedEnteredKey === hashedKey) {
         window.location.href = "main.html"; // Redirect to main page on success
