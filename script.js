@@ -1,9 +1,13 @@
 // Hashed version of "password" using MD5
-const hashedKey = '5f4dcc3b5aa765d61d8327deb882cf99'; // This is the MD5 hash of "password"
+const hashedKey = '5f4dcc3b5aa765d61d8327deb882cf99'; // MD5 hash of "password"
 
 function authenticate() {
     const enteredKey = document.getElementById('auth-key').value;
-    const hashedEnteredKey = CryptoJS.MD5(enteredKey).toString(); // Using CryptoJS MD5 hash function
+    const hashedEnteredKey = CryptoJS.MD5(enteredKey).toString(); // Hash the entered key
+
+    console.log("Entered Key: ", enteredKey); // Log the entered key
+    console.log("Hashed Entered Key: ", hashedEnteredKey); // Log the hashed entered key
+    console.log("Expected Hashed Key: ", hashedKey); // Log the expected hashed key
 
     if (hashedEnteredKey === hashedKey) {
         window.location.href = "main.html"; // Redirect to main page on success
@@ -11,6 +15,7 @@ function authenticate() {
         document.getElementById('auth-error').innerText = "Invalid authentication key.";
     }
 }
+
 
 // Fetch Bitcoin price
 async function fetchBTCPrice() {
